@@ -35,6 +35,17 @@ namespace BestGame
             this.StatusBar = new StatusBar();
             this.BattleArena = new BoundsRect(0, 0, consoleWidth - 1,  consoleHeight - this.StatusBar.BoundsRect.Height - 1);
             this.StatusBar.SetPostion(new Vector(1, this.BattleArena.Height));
+
+            if (this.StatusBar.ScoreUpdate != null)
+            {
+                this.Player.ScoreUpdate += this.StatusBar.ScoreUpdate;
+            }
+
+            if (this.StatusBar.WeaponChange != null)
+            {
+                this.Player.WeaponChange += this.StatusBar.WeaponChange;
+            }
+
             this.Player = new Player(new Vector(consoleWidth / 2, this.BattleArena.Height - 1));
             this.Player.AddWeapon(Weapons.Bullet);
             this.Player.SelectWeapon(1);
