@@ -18,8 +18,7 @@ namespace BestGame
         {
             if (this.offenceCounter++ % 15 == 0)
             {
-                return new Bullet(new Vector(this.Position.X, this.Position.Y + 1),
-                    new Vector(0, 1));
+                return new Bullet(new Vector(this.Position.X, this.Position.Y + 1), new Vector(0, 1));
             }
             else
             {
