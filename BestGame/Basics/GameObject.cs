@@ -42,7 +42,6 @@ namespace BestGame
         /// Creates new drawable object with position, colors and text glyph.
         /// </summary>
         /// <param name="position">Position of top left corner.</param>
-        /// <param name="color">Object's colors.</param>
         public GameObject(Vector position)
         {
             this.Position = position;

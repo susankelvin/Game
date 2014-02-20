@@ -10,7 +10,7 @@
   <Class Name="BestGame.Engine">
     <Position X="11.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAEAEAAAASCACgEAACQAAAQEABggAAAAFAYgAAGo=</HashCode>
+      <HashCode>AAAAAEAEAAAISAACgEAAAAAACSAARgABgkAFAYAAIGI=</HashCode>
       <FileName>Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -56,9 +56,10 @@
   <Class Name="BestGame.Marine">
     <Position X="3.25" Y="17" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\Marine.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="BestGame.DestructableEnemy">
     <Position X="3.25" Y="14.5" Width="1.5" />
@@ -71,8 +72,8 @@
   <Class Name="BestGame.StatusBar">
     <Position X="4.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>StatusBar.cs</FileName>
+      <HashCode>AAAAAAAAAAQAAAAAAAQAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StatusBar\StatusBar.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BestGame.Player">
@@ -81,11 +82,11 @@
       <Path>
         <Point X="2" Y="11.562" />
         <Point X="6.25" Y="11.562" />
-        <Point X="6.25" Y="11.625" />
+        <Point X="6.25" Y="11.643" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAABAAAgAAABAgAAAAAAAAAAIAAAAAAABEAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAgAAABBgAAAQIAAAAAIAAgAAAABEAAAAAAAA=</HashCode>
       <FileName>Player\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -107,7 +108,7 @@
   <Struct Name="BestGame.BoundsRect">
     <Position X="9.25" Y="14.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgEAAAAABAAAABAAAAAAAEAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <HashCode>AgEAAAAABAAAABAAAAAQAEAAAAAIAAAACACAAAAAAIA=</HashCode>
       <FileName>BoundsRect.cs</FileName>
     </TypeIdentifier>
   </Struct>
@@ -174,8 +175,15 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAABAgAAAAAAAAAAIAAAAAAABAAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAAAAABAgAAAQAAAAAAIAAgAAAABAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BestGame.IOffencible">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IOffencible.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

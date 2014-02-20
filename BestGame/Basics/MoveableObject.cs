@@ -16,8 +16,6 @@ namespace BestGame
         /// Creates moveable object with position, colors, text glyph and motion direction.
         /// </summary>
         /// <param name="position">Position.</param>
-        /// <param name="color">Colors.</param>
-        /// <param name="glyph">Glyph.</param>
         /// <param name="motionDirection">Motion direction.</param>
         public MoveableObject(Vector position, Vector motionDirection)
             : base(position)

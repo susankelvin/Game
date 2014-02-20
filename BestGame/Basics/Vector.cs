@@ -38,6 +38,11 @@ namespace BestGame
 
         public override bool Equals(object obj)
         {
+            if (obj == null)
+            {
+                return false;
+            }
+
             return this == (Vector)obj;
         }
 

@@ -2,7 +2,7 @@
 
 namespace BestGame
 {
-    public class Player : MoveableObject, IPlayer
+    public class Player : MoveableObject, IPlayer, IOffencible
     {
         private long score;
 
@@ -93,5 +93,10 @@ namespace BestGame
         }
 
 
+
+        IWeapon IOffencible.Shoot()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
