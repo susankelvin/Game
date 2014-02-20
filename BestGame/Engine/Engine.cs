@@ -7,12 +7,12 @@ namespace BestGame
 {
     public class Engine
     {
-        private const int nativeTimeOut = 50;
-        private const int updateEnemiesPasses = 5;
-        private const int creationPasses = 8;
-        private const int arenaWidth = 80;
-        private const int arenaHeight = 50;
-
+        private const int NativeTimeOut = 50;
+        private const int UpdateEnemiesPasses = 5;
+        private const int CreationPasses = 8;
+        private readonly int consoleWidth;
+        private readonly int consoleHeight;
+         
         private ulong Counter { get; set; }
         private Random Random { get; set; }
         private List<IWeapon> PlayerShots { get; set; }
@@ -23,26 +23,30 @@ namespace BestGame
         private StatusBar StatusBar { get; set; }
         private bool PlayerKilled { get; set; }
 
-        public Engine()
+        public Engine(int consoleWidth, int consoleHeight)
         {
+            this.consoleWidth = consoleWidth;
+            this.consoleHeight = consoleHeight;
             this.PlayerShots = new List<IWeapon>();
             this.EnemyShots = new List<IWeapon>();
-            this.Player = new Player(new Vector(arenaWidth / 2, arenaHeight - 1));
-            this.Player.AddWeapon(Weapons.Bullet);
-            this.Player.SelectWeapon(1);
             this.GameObjects = new List<IMoveable>();
             this.Counter = 0;
             this.Random = new Random();
-            this.BattleArena = new BoundsRect(0, 0, arenaWidth - 1, arenaHeight - 1);
+            this.StatusBar = new StatusBar();
+            this.BattleArena = new BoundsRect(0, 0, consoleWidth - 1,  consoleHeight - this.StatusBar.BoundsRect.Height - 1);
+            this.StatusBar.SetPostion(new Vector(1, this.BattleArena.Height));
+            this.Player = new Player(new Vector(consoleWidth / 2, this.BattleArena.Height - 1));
+            this.Player.AddWeapon(Weapons.Bullet);
+            this.Player.SelectWeapon(1);
             this.PlayerKilled = false;
         }
 
         private void InitConsole()
         {
-            Console.BufferWidth = arenaWidth + 1;
-            Console.WindowWidth = arenaWidth + 1;
-            Console.BufferHeight = arenaHeight;
-            Console.WindowHeight = arenaHeight;
+            Console.BufferWidth = consoleWidth + 1;
+            Console.WindowWidth = consoleWidth + 1;
+            Console.BufferHeight = consoleHeight;
+            Console.WindowHeight = consoleHeight;
             Console.CursorVisible = false;
             Console.Title = "Best game";
             Console.OutputEncoding = Encoding.Unicode;
@@ -93,6 +97,8 @@ namespace BestGame
                 {
                     case ConsoleKey.LeftArrow:
                     case ConsoleKey.RightArrow:
+                    case ConsoleKey.UpArrow:
+                    case ConsoleKey.DownArrow:
                         continue;
                     default:
                         return true;
@@ -109,26 +115,28 @@ namespace BestGame
             do
             {
                 this.DrawBackground();
+                this.StatusBar.Draw();
                 this.Player.Draw();
                 this.DrawShots();
                 this.DrawObjects();
 
                 this.Counter++;
-                Thread.Sleep(nativeTimeOut);
+                Thread.Sleep(NativeTimeOut);
 
                 if (!ReadKeyboard())
                 {
                     break;
                 }
 
-                if (this.Counter % creationPasses == 0)
+                if (this.Counter % CreationPasses == 0)
                 {
                     AddEnemy();
                 }
 
-                if (this.Counter % updateEnemiesPasses == 0)
+                if (this.Counter % UpdateEnemiesPasses == 0)
                 {
                     this.MoveObjects();
+                    this.NotifyShotTime();
                 }
 
                 this.MoveShots();
@@ -137,6 +145,8 @@ namespace BestGame
             Console.ResetColor();
             Console.Clear();
             this.PrintScore();
+            while (!Console.KeyAvailable)
+            { }
         }
 
         private bool TryDestroy(IMoveable item)
@@ -315,6 +325,27 @@ namespace BestGame
             CleanList(GameObjects, forRemoval);
         }
 
+        private void NotifyShotTime()
+        {
+            IOffencible badEnemy;
+            IWeapon shot;
+
+            foreach (var enemy in this.GameObjects)
+            {
+                badEnemy = enemy as IOffencible;
+
+                if (badEnemy != null)
+                {
+                    shot = badEnemy.Shoot();
+
+                    if (shot != null)
+                    {
+                        this.EnemyShots.Add(shot);
+                    }
+                }
+            }
+        }
+
         private void ProcessKey(ConsoleKeyInfo consoleKeyInfo)
         {
             switch (consoleKeyInfo.Key)
@@ -330,10 +361,24 @@ namespace BestGame
                     }
                     break;
                 case ConsoleKey.RightArrow:
-                    if (this.Player.BoundsRect.Left + this.Player.BoundsRect.Width < arenaWidth)
+                    if (this.Player.BoundsRect.Left + this.Player.BoundsRect.Width < consoleWidth)
                     {
                         this.Player.Move(new Vector(this.Player.BoundsRect.Left + 1,
                             this.Player.BoundsRect.Top));
+                    }
+                    break;
+                case ConsoleKey.UpArrow:
+                    if (this.Player.BoundsRect.Top > this.BattleArena.Height * 2 / 3)
+                    {
+                        this.Player.Move(new Vector(this.Player.BoundsRect.Left,
+                            this.Player.BoundsRect.Top - 1));
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (this.Player.BoundsRect.Bottom < this.BattleArena.Height - 1)
+                    {
+                        this.Player.Move(new Vector(this.Player.BoundsRect.Left,
+                            this.Player.BoundsRect.Top + 1));
                     }
                     break;
                 case ConsoleKey.D0:
@@ -361,7 +406,7 @@ namespace BestGame
                 case Enemies.Rock:
                     break;
                 case Enemies.Marine:
-                    newEnemy = new Marine(new Vector(Random.Next(arenaWidth), 0), new Vector(0, 1));
+                    newEnemy = new Marine(new Vector(Random.Next(consoleWidth), 0), new Vector(0, 1));
                     break;
                 case Enemies.Dron:
                     break;
@@ -387,8 +432,10 @@ namespace BestGame
 
         private void PrintScore()
         {
-            Console.SetCursorPosition(arenaWidth / 2, 0);
-            Console.WriteLine("Score: " + this.Player.Score);
+            string score = "Score: " + this.Player.Score;
+
+            Console.SetCursorPosition(consoleWidth / 2 - score.Length, 0);
+            Console.WriteLine(score);
         }
     }
 }

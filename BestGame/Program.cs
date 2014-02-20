@@ -9,7 +9,7 @@ namespace BestGame
     {
         static void Main()
         {
-            Engine engine = new Engine();
+            Engine engine = new Engine(80, 50);
 
             engine.Run();
         }

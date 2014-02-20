@@ -96,12 +96,12 @@ namespace BestGame
         /// <remarks>
         /// A rectangle fits into outer one if edges of the former are inside later or on its borders.
         /// </remarks>
-        /// <param name="other">The outer bounding rectangle.</param>
+        /// <param name="outer">The outer bounding rectangle.</param>
         /// <returns>True, if instance lies inside outer rectangle.</returns>
-        public bool LiesInside(BoundsRect other)
+        public bool LiesInside(BoundsRect outer)
         {
-            return (this.TopLeft.X >= other.TopLeft.X) && (this.TopLeft.Y >= other.TopLeft.Y) &&
-                (this.BottomRight.X <= other.BottomRight.X) && (this.BottomRight.Y <= other.BottomRight.Y);
+            return (this.TopLeft.X >= outer.TopLeft.X) && (this.TopLeft.Y >= outer.TopLeft.Y) &&
+                (this.BottomRight.X <= outer.BottomRight.X) && (this.BottomRight.Y <= outer.BottomRight.Y);
         }
 
         public bool Intersects(BoundsRect other)

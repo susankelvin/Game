@@ -23,10 +23,13 @@ namespace BestGame
         /// </summary>
         public ScoreUpdateEvent ScoreUpdate { get; private set; }
 
-        public StatusBar(Vector position)
-            : base(position)
+        public StatusBar() : base(new Vector(0, 0))
         { 
             // TODO: Assign WeaponChange & ScoreUpdate.
+
+            // Demo code:
+            this.Glyph = "Status bar";
+            this.Color = new Colors(ConsoleColor.DarkGray, ConsoleColor.White);
         }
 
         /// <summary>

@@ -8,7 +8,7 @@ namespace BestGame
             : base(position, motionDirection, 50)
         {
             this.Color = new Colors(ConsoleColor.Red, ConsoleColor.Yellow);
-            this.Glyph = "↑";
+            this.Glyph = "ʘ";
         }
     }
 }
