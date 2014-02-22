@@ -34,7 +34,8 @@ namespace BestGame
             this.Random = new Random();
             this.StatusBar = new StatusBar();
             this.BattleArena = new BoundsRect(0, 0, consoleWidth - 1,  consoleHeight - this.StatusBar.BoundsRect.Height - 1);
-            this.StatusBar.SetPostion(new Vector(1, this.BattleArena.Height));
+            this.StatusBar.SetPostion(new Vector(0, this.BattleArena.Height));
+            this.Player = new Player(new Vector(consoleWidth / 2, this.BattleArena.Height - 1));
 
             if (this.StatusBar.ScoreUpdate != null)
             {
@@ -46,7 +47,6 @@ namespace BestGame
                 this.Player.WeaponChange += this.StatusBar.WeaponChange;
             }
 
-            this.Player = new Player(new Vector(consoleWidth / 2, this.BattleArena.Height - 1));
             this.Player.AddWeapon(Weapons.Bullet);
             this.Player.SelectWeapon(1);
             this.PlayerKilled = false;

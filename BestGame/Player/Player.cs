@@ -31,7 +31,7 @@ namespace BestGame
 
                 if (ScoreUpdate != null)
                 {
-                    ScoreUpdate();
+                    ScoreUpdate(this.Score);
                 }
             }
         }
@@ -67,14 +67,14 @@ namespace BestGame
 
                 if (WeaponChange != null)
                 {
-                    WeaponChange();
+                    WeaponChange(this.ActiveWeapon);
                 }
             }
 
             return this.AvailableWeapons[index];
         }
 
-        public Weapon Shoot()
+        public IWeapon Shoot()
         {
             switch (ActiveWeapon)
             {
@@ -90,13 +90,6 @@ namespace BestGame
                 default:
                     return null;
             }
-        }
-
-
-
-        IWeapon IOffencible.Shoot()
-        {
-            throw new NotImplementedException();
         }
     }
 }
