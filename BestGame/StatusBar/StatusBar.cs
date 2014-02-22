@@ -13,6 +13,9 @@ namespace BestGame
     /// </remarks>
     public class StatusBar : GameObject
     {
+        private Weapons currentWeapon;
+        private long currentScore;
+
         /// <summary>
         /// Delegate for player's WeaponChangeEvent.
         /// </summary>
@@ -23,13 +26,21 @@ namespace BestGame
         /// </summary>
         public ScoreUpdateEvent ScoreUpdate { get; private set; }
 
-        public StatusBar() : base(new Vector(0, 0))
-        { 
-            // TODO: Assign WeaponChange & ScoreUpdate.
+        public override BoundsRect BoundsRect
+        {
+            get
+            {
+                return new BoundsRect(this.Position.X, this.Position.Y,
+                    Console.WindowWidth - this.Position.X - 1, this.Position.Y + 1);
+            }
+        }
 
-            // Demo code:
-            this.Glyph = "Status bar";
-            this.Color = new Colors(ConsoleColor.DarkGray, ConsoleColor.White);
+        public StatusBar() : base(new Vector(0, 0))
+        {
+            this.currentWeapon = (Weapons)0;
+            this.currentScore = 0;
+            this.WeaponChange = activeWeapon => this.currentWeapon = activeWeapon;
+            this.ScoreUpdate = newScore => this.currentScore = newScore;
         }
 
         /// <summary>
@@ -39,6 +50,16 @@ namespace BestGame
         public void SetPostion(Vector topLeft)
         {
             this.Position = topLeft;
+        }
+
+        public override void Draw()
+        {
+            string line = new string('\u00AF', this.BoundsRect.Width);
+
+            Console.SetCursorPosition(this.Position.X, this.Position.Y);
+            Console.Write(line);
+            Console.SetCursorPosition(this.Position.X, this.Position.Y + 1);
+            Console.Write("\tScore: {0}\t\tActive weapon: {1}", this.currentScore, this.currentWeapon);
         }
     }
 }

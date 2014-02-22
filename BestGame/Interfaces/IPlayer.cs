@@ -5,12 +5,12 @@ namespace BestGame
     /// <summary>
     /// Delegate for IPlayer.WeaponChange event.
     /// </summary>
-    public delegate void WeaponChangeEvent();
+    public delegate void WeaponChangeEvent(Weapons activeWeapon);
 
     /// <summary>
     /// Delegate for IPlayer.ScoreUpdate event.
     /// </summary>
-    public delegate void ScoreUpdateEvent();
+    public delegate void ScoreUpdateEvent(long newScore);
 
     /// <summary>
     /// Required for player objects.
@@ -54,6 +54,6 @@ namespace BestGame
         /// Shoots with active weapon.
         /// </summary>
         /// <returns>New shot.</returns>
-        Weapon Shoot();
+        IWeapon Shoot();
     }
 }
