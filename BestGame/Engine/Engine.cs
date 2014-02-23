@@ -122,6 +122,7 @@ namespace BestGame
         public void Run()
         {
             this.InitConsole();
+            this.PrintWelcomeMessage();
 
             do
             {
@@ -472,6 +473,11 @@ namespace BestGame
             {
                 list.RemoveAt(indices[i]);
             }
+        }
+
+        private void PrintWelcomeMessage()
+        {
+
         }
 
         private void PrintScore()
