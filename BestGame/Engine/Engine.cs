@@ -47,8 +47,8 @@ namespace BestGame
                 this.Player.WeaponChange += this.StatusBar.WeaponChange;
             }
 
-            this.Player.AddWeapon(Weapons.Bullet);
-            this.Player.SelectWeapon(1);
+            this.Player.AddWeapon(Weapons.Missile);
+            this.Player.SelectWeapon(2);
             this.PlayerKilled = false;
         }
 
@@ -210,7 +210,7 @@ namespace BestGame
                         {
                             if(this.PlayerShots[i] is Missile)
                             {
-                                BoundsRect explodeRadius = new BoundsRect(bounds.Left - 15, bounds.Top - 15, bounds.Right + 15, bounds.Bottom + 15);
+                                BoundsRect explodeRadius = new BoundsRect(bounds.Left - 10, bounds.Top - 10, bounds.Right + 10, bounds.Bottom + 10);
                                 MissileExplode(explodeRadius, this.PlayerShots[i]);
                                 shotsToRemove.Add(i);
                                 shotDestroyed = true;
