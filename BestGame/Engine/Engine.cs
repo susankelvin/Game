@@ -367,7 +367,7 @@ namespace BestGame
         private void NotifyShotTime()
         {
             IOffencible badEnemy;
-            IWeapon shot;
+            List<IWeapon> shot = new List<IWeapon>();
 
             foreach (var enemy in this.GameObjects)
             {
@@ -375,12 +375,7 @@ namespace BestGame
 
                 if (badEnemy != null)
                 {
-                    shot = badEnemy.Shoot();
-
-                    if (shot != null)
-                    {
-                        this.EnemyShots.Add(shot);
-                    }
+                    this.EnemyShots.AddRange(badEnemy.Shoot());
                 }
             }
         }
