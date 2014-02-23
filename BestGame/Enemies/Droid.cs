@@ -18,11 +18,13 @@ namespace BestGame
             this.Shield = 20;
         }
 
-        public IWeapon Shoot()
+        public IList<IWeapon> Shoot()
         {
-            if (this.offenceCounter++ % 10 == 0)
+            List<IWeapon> bullets = new List<IWeapon>();
+            if (this.offenceCounter++ % 30 == 0)
             {
-                return new Bullet(new Vector(this.Position.X + 1, this.Position.Y), new Vector(0, 1), new Colors(ConsoleColor.White, ConsoleColor.White));
+                bullets.Add(new Bullet(new Vector(this.Position.X, this.Position.Y + 1), new Vector(0, 1)));
+                return bullets;
             }
             else
             {
@@ -41,6 +43,20 @@ namespace BestGame
                 return new BoundsRect(this.Position.X - 1, this.Position.Y + 1);
             }
 
+        }
+
+        System.Collections.Generic.IList<IWeapon> IOffencible.Shoot()
+        {
+            List<IWeapon> bullets = new List<IWeapon>();
+            if (this.offenceCounter++ % 30 == 0)
+            {
+                bullets.Add(new Bullet(new Vector(this.Position.X, this.Position.Y + 1), new Vector(0, 1)));
+                return bullets;
+            }
+            else
+            {
+                return bullets;
+            }
         }
     }
 }

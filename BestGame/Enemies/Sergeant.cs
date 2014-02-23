@@ -16,11 +16,13 @@ namespace BestGame
             this.Glyph = "\\V/";
             this.offenceCounter = 0;
         }
-        public IWeapon Shoot()
+        public IList<IWeapon> Shoot()
         {
+            List<IWeapon> bullets = new List<IWeapon>();
             if (this.offenceCounter++ % 30 == 0)
             {
-                return new Bullet(new Vector(this.Position.X, this.Position.Y + 1), new Vector(0, 1));
+                bullets.Add(new Bullet(new Vector(this.Position.X, this.Position.Y + 1), new Vector(0, 1)));
+                return bullets;
             }
             else
             {
@@ -34,6 +36,20 @@ namespace BestGame
             var asd = new BoundsRect(this.BoundsRect.TopLeft + vect,
                 this.BoundsRect.BottomRight + vect);
             return asd;
+        }
+
+        System.Collections.Generic.IList<IWeapon> IOffencible.Shoot()
+        {
+            List<IWeapon> bullets = new List<IWeapon>();
+            if (this.offenceCounter++ % 30 == 0)
+            {
+                bullets.Add(new Bullet(new Vector(this.Position.X, this.Position.Y + 1), new Vector(0, 1)));
+                return bullets;
+            }
+            else
+            {
+                return bullets;
+            }
         }
     }
 }
