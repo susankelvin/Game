@@ -10,7 +10,7 @@
   <Class Name="BestGame.Engine">
     <Position X="11.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAEAAAISAACgMAAAAAACSAARgABgkAFAYAEIGI=</HashCode>
+      <HashCode>AACAAEAEAAAISAACgMAAAAAACSAARgABgkAFAYAAIGI=</HashCode>
       <FileName>Engine\Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -56,7 +56,7 @@
   <Class Name="BestGame.Marine">
     <Position X="3.25" Y="17" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABBAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\Marine.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.179" />
@@ -190,7 +190,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAABAgAAAQAAAAAAIAAgAAAABAAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAAAAAAAgAAAQAAAAAAIAAgAAAABAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayer.cs</FileName>
     </TypeIdentifier>
   </Interface>

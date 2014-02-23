@@ -25,5 +25,10 @@ namespace BestGame
                 return null;
             }
         }
+
+        System.Collections.Generic.IList<IWeapon> IOffencible.Shoot()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

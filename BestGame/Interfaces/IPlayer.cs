@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BestGame
 {
@@ -15,7 +16,7 @@ namespace BestGame
     /// <summary>
     /// Required for player objects.
     /// </summary>
-    public interface IPlayer : IMoveable
+    public interface IPlayer : IMoveable, IOffencible
     {
         /// <summary>
         /// Active weapon.
@@ -49,11 +50,5 @@ namespace BestGame
         /// <param name="index">Weapon.</param>
         /// <returns>True, if weapon is activated.</returns>
         bool SelectWeapon(int index);
-
-        /// <summary>
-        /// Shoots with active weapon.
-        /// </summary>
-        /// <returns>New shot.</returns>
-        IWeapon Shoot();
     }
 }

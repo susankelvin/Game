@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BestGame
 {
@@ -74,17 +75,21 @@ namespace BestGame
             return this.AvailableWeapons[index];
         }
 
-        public IWeapon Shoot()
+        public IList<IWeapon> Shoot()
         {
+            List<IWeapon> result = new List<IWeapon>();
+
             switch (ActiveWeapon)
             {
                 case Weapons.Knife:
                     return null;
                 case Weapons.Bullet:
-                    return new Bullet(new Vector(this.Position.X, this.Position.Y - 1),
-                        new Vector(0, -1));
+                    result.Add(new Bullet(new Vector(this.Position.X, this.Position.Y - 1),
+                        new Vector(0, -1)));
+                    return result;
                 case Weapons.Missile:
-                    return new Missile(new Vector(this.Position.X, this.Position.Y - 1), new Vector(0, -1));
+                    result.Add(new Missile(new Vector(this.Position.X, this.Position.Y - 1), new Vector(0, -1)));
+                    return result;
                 case Weapons.Bomb:
                     return null;
                 default:

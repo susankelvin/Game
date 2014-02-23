@@ -389,7 +389,7 @@ namespace BestGame
             switch (consoleKeyInfo.Key)
             {
                 case ConsoleKey.Spacebar:
-                    PlayerShots.Add(Player.Shoot());
+                    PlayerShots.AddRange(Player.Shoot());
                     break;
                 case ConsoleKey.LeftArrow:
                     if (this.Player.BoundsRect.Left > 0)

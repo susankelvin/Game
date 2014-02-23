@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BestGame
 {
@@ -15,6 +16,6 @@ namespace BestGame
         /// Return null if object will not attack this time.
         /// </remarks>
         /// <returns>New shot or null.</returns>
-        IWeapon Shoot();
+        IList<IWeapon> Shoot();
     }
 }
