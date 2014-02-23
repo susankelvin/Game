@@ -21,7 +21,7 @@ namespace BestGame
         public IList<IWeapon> Shoot()
         {
             List<IWeapon> bullets = new List<IWeapon>();
-            if (this.offenceCounter++ % 30 == 0)
+            if (this.offenceCounter++ % 10 == 0)
             {
                 bullets.Add(new Bullet(new Vector(this.Position.X, this.Position.Y + 1), new Vector(0, 1)));
                 return bullets;
@@ -48,9 +48,9 @@ namespace BestGame
         System.Collections.Generic.IList<IWeapon> IOffencible.Shoot()
         {
             List<IWeapon> bullets = new List<IWeapon>();
-            if (this.offenceCounter++ % 30 == 0)
+            if (this.offenceCounter++ % 10 == 0)
             {
-                bullets.Add(new Bullet(new Vector(this.Position.X, this.Position.Y + 1), new Vector(0, 1)));
+                bullets.Add(new Bullet(new Vector(this.Position.X, this.Position.Y + 1), new Vector(0, 1), new Colors(ConsoleColor.White, ConsoleColor.White)));
                 return bullets;
             }
             else
