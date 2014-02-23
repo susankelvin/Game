@@ -417,12 +417,16 @@ namespace BestGame
                 case Enemies.Rock:
                     break;
                 case Enemies.Marine:
-                    newEnemy = new Marine(new Vector(Random.Next(consoleWidth), 0), new Vector(0, 1));
+                   // newEnemy = new Marine(new Vector(Random.Next(consoleWidth), 0), new Vector(0, 1));
                     break;
                 case Enemies.Dron:
                     break;
                 case Enemies.Droid:
                     break;
+                case Enemies.Sergeant:
+                    newEnemy = new Sergeant(new Vector(Random.Next(consoleWidth), 0), new Vector(0, 1)); 
+                // new Vector(Random.Next(-2, 2), Random.Next(1, 2)));
+                   break;
                 default:
                     break;
             }

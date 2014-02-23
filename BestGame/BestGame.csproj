@@ -60,6 +60,7 @@
     <Compile Include="Enemies\DestructableEnemy.cs" />
     <Compile Include="Enemies\Enemy.cs" />
     <Compile Include="Enemies\Marine.cs" />
+    <Compile Include="Enemies\Sergeant.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IOffencible.cs" />

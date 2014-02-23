@@ -5,7 +5,7 @@ namespace BestGame
     /// <summary>
     /// Available enemies.
     /// </summary>
-    public enum Enemies { Rock, Marine, Dron, Droid };
+    public enum Enemies { Rock, Marine, Dron, Droid, Sergeant };
 
     /// <summary>
     /// Abstract foundation of enemy objects.
