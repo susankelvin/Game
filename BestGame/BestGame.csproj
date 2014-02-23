@@ -58,8 +58,11 @@
   <ItemGroup>
     <Compile Include="Basics\BoundsRect.cs" />
     <Compile Include="Enemies\DestructableEnemy.cs" />
+    <Compile Include="Enemies\Droid.cs" />
+    <Compile Include="Enemies\Dron.cs" />
     <Compile Include="Enemies\Enemy.cs" />
     <Compile Include="Enemies\Marine.cs" />
+    <Compile Include="Enemies\Rock.cs" />
     <Compile Include="Enemies\Sergeant.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />

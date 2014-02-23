@@ -90,6 +90,10 @@ namespace BestGame
             : this(new Vector(left, top), new Vector(right, bottom))
         { }
 
+        public BoundsRect(int left, int top)
+            : this(new Vector(left, top), new Vector(left, top))
+        { }
+
         /// <summary>
         /// Checks if bounding rectangle fits into another one.
         /// </summary>

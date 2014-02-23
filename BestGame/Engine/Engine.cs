@@ -162,6 +162,10 @@ namespace BestGame
 
         private bool TryDestroy(IMoveable item)
         {
+            if (item is Rock)
+            {
+                return false;
+            }
             IDestructable enemy = item as IDestructable;
 
             if ((item != null) && (enemy.Shield <= 0))
@@ -415,13 +419,16 @@ namespace BestGame
             switch (newEnemyKind)
             {
                 case Enemies.Rock:
+                    newEnemy = new Rock(new Vector(Random.Next(consoleWidth), 0), new Vector(0, 1));
                     break;
                 case Enemies.Marine:
                     newEnemy = new Marine(new Vector(Random.Next(consoleWidth), 0), new Vector(0, 1));
                     break;
                 case Enemies.Dron:
+                    newEnemy = new Dron(new Vector(Random.Next(consoleWidth), 0), new Vector(0, 1));
                     break;
                 case Enemies.Droid:
+                    newEnemy = new Droid(new Vector(Random.Next(consoleWidth), 0), new Vector(0, 1));
                     break;
                 case Enemies.Sergeant:
                     newEnemy = new Sergeant(new Vector(Random.Next(consoleWidth), 0), new Vector(0, 1));
