@@ -90,8 +90,11 @@ namespace BestGame
                 case Weapons.Missile:
                     result.Add(new Missile(new Vector(this.Position.X, this.Position.Y - 1), new Vector(0, -1)));
                     return result;
-                case Weapons.Bomb:
-                    return null;
+                case Weapons.MultipleBullet:
+                    result.Add(new MultipleBullet(new Vector(this.Position.X - 1, this.Position.Y - 1), new Vector(0, -1)));
+                    result.Add(new MultipleBullet(new Vector(this.Position.X, this.Position.Y - 1), new Vector(0, -1)));
+                    result.Add(new MultipleBullet(new Vector(this.Position.X + 1, this.Position.Y - 1), new Vector(0, -1)));
+                    return result;
                 default:
                     return null;
             }
