@@ -41,6 +41,7 @@ namespace BestGame
             this.currentScore = 0;
             this.WeaponChange = activeWeapon => this.currentWeapon = activeWeapon;
             this.ScoreUpdate = newScore => this.currentScore = newScore;
+            this.Color = new Colors(ConsoleColor.White, ConsoleColor.DarkBlue);
         }
 
         /// <summary>
@@ -56,6 +57,8 @@ namespace BestGame
         {
             string line = new string('\u00AF', this.BoundsRect.Width);
 
+            Console.ForegroundColor = this.Color.Foreground;
+            Console.BackgroundColor = this.Color.Background;
             Console.SetCursorPosition(this.Position.X, this.Position.Y);
             Console.Write(line);
             Console.SetCursorPosition(this.Position.X, this.Position.Y + 1);
