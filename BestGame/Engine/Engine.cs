@@ -367,7 +367,6 @@ namespace BestGame
         private void NotifyShotTime()
         {
             IOffencible badEnemy;
-            List<IWeapon> shot = new List<IWeapon>();
 
             foreach (var enemy in this.GameObjects)
             {
