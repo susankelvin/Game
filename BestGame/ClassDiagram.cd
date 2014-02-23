@@ -10,15 +10,15 @@
   <Class Name="BestGame.Engine">
     <Position X="11.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAEAAAISAACgEAAAAAACSAARgABgkAFAYAAIGI=</HashCode>
-      <FileName>Engine.cs</FileName>
+      <HashCode>AAAAAEAEAAAISAACgMAAAAAACSAARgABgkAFAYAAIGI=</HashCode>
+      <FileName>Engine\Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BestGame.GameObject">
     <Position X="0.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAIAhAAAAAA=</HashCode>
-      <FileName>GameObject.cs</FileName>
+      <FileName>Basics\GameObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -26,7 +26,7 @@
     <Position X="0.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAIAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MoveableObject.cs</FileName>
+      <FileName>Basics\MoveableObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -59,7 +59,7 @@
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\Marine.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.179" />
   </Class>
   <Class Name="BestGame.DestructableEnemy">
     <Position X="3.25" Y="14.5" Width="1.5" />
@@ -72,7 +72,7 @@
   <Class Name="BestGame.StatusBar">
     <Position X="4.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAAAAAQAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAAoAAAAQIAAAAAAAAgAAAAAAABAAAAAA=</HashCode>
       <FileName>StatusBar\StatusBar.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -86,8 +86,16 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAABAAAgAAABBgAAAQIAAAAAIAAgAAAABEAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAgAAABAgAAAQIAAAAAIAAgAAAABEAAAAAAAA=</HashCode>
       <FileName>Player\Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BestGame.Sergeant">
+    <Position X="5.75" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\Sergeant.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -95,21 +103,21 @@
     <Position X="9.25" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAwAAAAAAAAAAAAIAAAAAAAAAAYiA=</HashCode>
-      <FileName>Vector.cs</FileName>
+      <FileName>Basics\Vector.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="BestGame.Colors">
     <Position X="9.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>Colors.cs</FileName>
+      <FileName>Basics\Colors.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="BestGame.BoundsRect">
     <Position X="9.25" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgEAAAAABAAAABAAAAAQAEAAAAAIAAAACACAAAAAAIA=</HashCode>
-      <FileName>BoundsRect.cs</FileName>
+      <FileName>Basics\BoundsRect.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="BestGame.IDrawable">
