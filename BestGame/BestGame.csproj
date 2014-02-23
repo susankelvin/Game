@@ -67,6 +67,7 @@
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IOffencible.cs" />
+    <Compile Include="Weapons\Missile.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="StatusBar\StatusBar.cs" />
     <Compile Include="Weapons\Bullet.cs" />

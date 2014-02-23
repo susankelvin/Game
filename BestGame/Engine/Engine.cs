@@ -207,11 +207,22 @@ namespace BestGame
                     {
                         if (bounds.Intersects(this.GameObjects[j].BoundsRect))
                         {
-                            HandleShotHit(this.PlayerShots[i], this.GameObjects[j]);
-                            TryDestroy(this.GameObjects[j]);
-                            shotsToRemove.Add(i);
-                            shotDestroyed = true;
-                            break;
+                            if(this.PlayerShots[i] is Missile)
+                            {
+                                BoundsRect explodeRadius = new BoundsRect(bounds.Left - 15, bounds.Top - 15, bounds.Right + 15, bounds.Bottom + 15);
+                                MissileExplode(explodeRadius, this.PlayerShots[i]);
+                                shotsToRemove.Add(i);
+                                shotDestroyed = true;
+                                break;
+                            }
+                            else
+                            {
+                                HandleShotHit(this.PlayerShots[i], this.GameObjects[j]);
+                                TryDestroy(this.GameObjects[j]);
+                                shotsToRemove.Add(i);
+                                shotDestroyed = true;
+                                break;
+                            }
                         }
                     }
 
@@ -270,6 +281,18 @@ namespace BestGame
             }
 
             CleanList(this.EnemyShots, shotsToRemove);
+        }
+
+        private void MissileExplode(BoundsRect missileRadius, IWeapon weapon)
+        {
+            for (int j = 0; j < this.GameObjects.Count; j++)
+            {
+                if (this.GameObjects[j].BoundsRect.LiesInside(missileRadius))
+                {
+                    HandleShotHit(weapon, this.GameObjects[j]);
+                    TryDestroy(this.GameObjects[j]);
+                }
+            }
         }
 
         private void MoveObjects()

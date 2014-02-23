@@ -84,7 +84,7 @@ namespace BestGame
                     return new Bullet(new Vector(this.Position.X, this.Position.Y - 1),
                         new Vector(0, -1));
                 case Weapons.Missile:
-                    return null;
+                    return new Missile(new Vector(this.Position.X, this.Position.Y - 1), new Vector(0, -1));
                 case Weapons.Bomb:
                     return null;
                 default:

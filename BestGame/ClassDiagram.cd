@@ -10,7 +10,7 @@
   <Class Name="BestGame.Engine">
     <Position X="11.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAEAAAISAACgMAAAAAACSAARgABgkAFAYAAIGI=</HashCode>
+      <HashCode>AAAAAEAEAAAISAACgMAAAAAACSAARgABgkAFAYAEIGI=</HashCode>
       <FileName>Engine\Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -39,7 +39,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="BestGame.Bullet">
-    <Position X="0.5" Y="17" Width="1.5" />
+    <Position X="1.5" Y="17" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Bullet.cs</FileName>
@@ -94,10 +94,17 @@
   <Class Name="BestGame.Sergeant">
     <Position X="5.75" Y="17" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAIAAAABAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\Sergeant.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BestGame.Missile">
+    <Position X="0.5" Y="18.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Weapons\Missile.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Struct Name="BestGame.Vector">
     <Position X="9.25" Y="9.75" Width="1.5" />
