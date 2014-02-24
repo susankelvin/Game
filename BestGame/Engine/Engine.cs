@@ -496,6 +496,7 @@ namespace BestGame
                 "Press any key when ready."
             };
 
+            Console.ForegroundColor = ConsoleColor.White;
             PrintCenteredMessages(greetingMessage);
         }
 
@@ -507,6 +508,7 @@ namespace BestGame
                 "Press any key to exit."
             };
 
+            Console.ForegroundColor = ConsoleColor.White;
             PrintCenteredMessages(endGameMessage);
         }
 
