@@ -82,10 +82,10 @@ namespace BestGame
             switch (ActiveWeapon)
             {
                 case Weapons.Knife:
-                    return null;
+                    result.Add(new Knife(new Vector(this.Position.X, this.Position.Y - 1), new Vector(0, -1)));
+                    return result;
                 case Weapons.Bullet:
-                    result.Add(new Bullet(new Vector(this.Position.X, this.Position.Y - 1),
-                        new Vector(0, -1)));
+                    result.Add(new Bullet(new Vector(this.Position.X, this.Position.Y - 1), new Vector(0, -1)));
                     return result;
                 case Weapons.Missile:
                     result.Add(new Missile(new Vector(this.Position.X, this.Position.Y - 1), new Vector(0, -1)));

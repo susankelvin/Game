@@ -47,8 +47,12 @@ namespace BestGame
                 this.Player.WeaponChange += this.StatusBar.WeaponChange;
             }
 
-            this.Player.AddWeapon(Weapons.Missile);
-            this.Player.SelectWeapon(2);
+            foreach (var item in typeof(Weapons).GetEnumValues())
+            {
+                Player.AddWeapon((Weapons)item);
+            }
+
+            this.Player.SelectWeapon((int)Weapons.Missile);
             this.PlayerKilled = false;
         }
 
@@ -152,24 +156,34 @@ namespace BestGame
                 }
 
                 this.MoveShots();
+                this.RemoveDischargedShots(this.PlayerShots, this.EnemyShots);
             } while (!this.PlayerKilled);
 
-            Console.ResetColor();
-            Console.Clear();
+            this.DrawBackground();
             this.PrintScore();
             while (!Console.KeyAvailable)
             { }
         }
 
+        private void RemoveDischargedShots(params IList<IWeapon>[] lists)
+        {
+            foreach (var list in lists)
+            {
+                for (int i = list.Count - 1; i >= 0; i--)
+                {
+                    if (list[i].Energy == 0)
+                    {
+                        list.RemoveAt(i);
+                    }
+                }
+            }
+        }
+
         private bool TryDestroy(IMoveable item)
         {
-            if (item is Rock)
-            {
-                return false;
-            }
             IDestructable enemy = item as IDestructable;
 
-            if ((item != null) && (enemy.Shield <= 0))
+            if ((enemy != null) && (enemy.Shield <= 0))
             {
                 this.GameObjects.Remove(item);
                 return true;
@@ -414,7 +428,6 @@ namespace BestGame
                             this.Player.BoundsRect.Top + 1));
                     }
                     break;
-                case ConsoleKey.D0:
                 case ConsoleKey.D1:
                 case ConsoleKey.D2:
                 case ConsoleKey.D3:
@@ -424,7 +437,7 @@ namespace BestGame
                 case ConsoleKey.D7:
                 case ConsoleKey.D8:
                 case ConsoleKey.D9:
-                    this.Player.SelectWeapon(consoleKeyInfo.KeyChar - '0');
+                    this.Player.SelectWeapon(consoleKeyInfo.KeyChar - '1');
                     break;
             }
         }
