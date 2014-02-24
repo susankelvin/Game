@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BestGame.Program">
-    <Position X="9.25" Y="8.25" Width="1.5" />
+    <Position X="11.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BestGame.Engine">
-    <Position X="11.25" Y="8.25" Width="1.5" />
+    <Position X="13.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAGAAEAEAAAISAACgMAAAAAACSAARgABgkAFAYAAIGI=</HashCode>
+      <HashCode>AAGAAEAEAAAISAACgMAAAAAACSAARgABgkAFA4AAIGI=</HashCode>
       <FileName>Engine\Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -39,7 +39,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="BestGame.Bullet">
-    <Position X="1.5" Y="17" Width="1.25" />
+    <Position X="2.25" Y="20.5" Width="1.25" />
+    <InheritanceLine Type="BestGame.Weapon" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="1.125" Y="16.377" />
+        <Point X="1.125" Y="19.875" />
+        <Point X="2.875" Y="19.875" />
+        <Point X="2.875" Y="20.5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Bullet.cs</FileName>
@@ -54,7 +62,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="BestGame.Marine">
-    <Position X="3.25" Y="17" Width="1.5" />
+    <Position X="3.25" Y="17.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABBAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\Marine.cs</FileName>
@@ -77,12 +85,12 @@
     </TypeIdentifier>
   </Class>
   <Class Name="BestGame.Player">
-    <Position X="6.25" Y="11.25" Width="1.5" />
+    <Position X="9.5" Y="11.25" Width="1.5" />
     <InheritanceLine Type="BestGame.MoveableObject" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="2" Y="11.562" />
-        <Point X="6.25" Y="11.562" />
-        <Point X="6.25" Y="11.643" />
+        <Point X="9.5" Y="11.562" />
+        <Point X="9.5" Y="11.643" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -92,7 +100,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="BestGame.Sergeant">
-    <Position X="5.75" Y="17" Width="1.5" />
+    <Position X="5.5" Y="17.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAIAAAABBAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemies\Sergeant.cs</FileName>
@@ -100,42 +108,112 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="BestGame.Missile">
-    <Position X="0.5" Y="18.5" Width="1.25" />
+    <Position X="0.5" Y="20.5" Width="1.25" />
+    <InheritanceLine Type="BestGame.Weapon" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="1.125" Y="16.377" />
+        <Point X="1.125" Y="16.503" />
+        <Point X="1.125" Y="16.503" />
+        <Point X="1.125" Y="20.5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Missile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BestGame.MultipleBullet">
-    <Position X="2" Y="19.5" Width="1.25" />
+    <Position X="4" Y="20.5" Width="1.5" />
+    <InheritanceLine Type="BestGame.Weapon" FixedFromPoint="true">
+      <Path>
+        <Point X="1.125" Y="16.377" />
+        <Point X="1.125" Y="19.875" />
+        <Point X="4.75" Y="19.875" />
+        <Point X="4.75" Y="20.5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\MultipleBullet.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="BestGame.Rock">
+    <Position X="5.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\Rock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BestGame.Dron">
+    <Position X="7.5" Y="17.25" Width="1.5" />
+    <InheritanceLine Type="BestGame.DestructableEnemy" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="4.75" Y="15.688" />
+        <Point X="8.25" Y="15.688" />
+        <Point X="8.25" Y="17.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABBAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\Dron.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BestGame.Droid">
+    <Position X="9.5" Y="17.25" Width="1.5" />
+    <InheritanceLine Type="BestGame.DestructableEnemy" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="4.75" Y="15.688" />
+        <Point X="6.565" Y="15.688" />
+        <Point X="6.565" Y="15.685" />
+        <Point X="10.25" Y="15.685" />
+        <Point X="10.25" Y="17.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAABBAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\Droid.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BestGame.Knife">
+    <Position X="6" Y="20.5" Width="1.5" />
+    <InheritanceLine Type="BestGame.Weapon" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="1.125" Y="16.377" />
+        <Point X="1.125" Y="19.875" />
+        <Point X="6.75" Y="19.875" />
+        <Point X="6.75" Y="20.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAEAAAQAAAAA=</HashCode>
+      <FileName>Weapons\Knife.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="BestGame.Vector">
-    <Position X="9.25" Y="9.75" Width="1.5" />
+    <Position X="11.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAwAAAAAAAAAAAAIAAAAAAAAAAYiA=</HashCode>
       <FileName>Basics\Vector.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="BestGame.Colors">
-    <Position X="9.25" Y="12.75" Width="1.5" />
+    <Position X="11.5" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Basics\Colors.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="BestGame.BoundsRect">
-    <Position X="9.25" Y="14.75" Width="1.5" />
+    <Position X="11.5" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgEAAAAABAAAABAAAAAQAEAAAAAIAAAACACAAAAAAIA=</HashCode>
       <FileName>Basics\BoundsRect.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="BestGame.IDrawable">
-    <Position X="4.5" Y="0.5" Width="1.5" />
+    <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Interfaces\IDrawable.cs</FileName>
@@ -202,7 +280,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="BestGame.IOffencible">
-    <Position X="6.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IOffencible.cs</FileName>
