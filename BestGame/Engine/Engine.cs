@@ -12,7 +12,7 @@ namespace BestGame
         private const int CreationPasses = 16;
         private readonly int consoleWidth;
         private readonly int consoleHeight;
-         
+
         private ulong Counter { get; set; }
         private Random Random { get; set; }
         private List<IWeapon> PlayerShots { get; set; }
@@ -33,7 +33,7 @@ namespace BestGame
             this.Counter = 0;
             this.Random = new Random();
             this.StatusBar = new StatusBar();
-            this.BattleArena = new BoundsRect(0, 0, consoleWidth - 1,  consoleHeight - this.StatusBar.BoundsRect.Height - 1);
+            this.BattleArena = new BoundsRect(0, 0, consoleWidth - 1, consoleHeight - this.StatusBar.BoundsRect.Height - 1);
             this.StatusBar.SetPostion(new Vector(0, this.BattleArena.Height));
             this.Player = new Player(new Vector(consoleWidth / 2, this.BattleArena.Height - 1));
 
@@ -126,7 +126,10 @@ namespace BestGame
         public void Run()
         {
             this.InitConsole();
+            this.DrawBackground();
             this.PrintWelcomeMessage();
+            while (!Console.KeyAvailable)
+            { }
 
             do
             {
@@ -222,7 +225,7 @@ namespace BestGame
                     {
                         if (bounds.Intersects(this.GameObjects[j].BoundsRect))
                         {
-                            if(this.PlayerShots[i] is Missile)
+                            if (this.PlayerShots[i] is Missile)
                             {
                                 BoundsRect explodeRadius = new BoundsRect(bounds.Left - 10, bounds.Top - 10, bounds.Right + 10, bounds.Bottom + 10);
                                 MissileExplode(explodeRadius, this.PlayerShots[i]);
@@ -484,15 +487,36 @@ namespace BestGame
 
         private void PrintWelcomeMessage()
         {
+            string[] greetingMessage = {
+                "Welcome to Best game!\n\n",
+                "Use left, right, up and down arrow keys to navigate.\n",
+                "Select active weapon with numeric keys.\n\n",
+                "Press Esc to end the game.\n\n",
+                "More enemies You destroy higher score You get.\n\n",
+                "Press any key when ready."
+            };
 
+            PrintCenteredMessages(greetingMessage);
         }
 
         private void PrintScore()
         {
-            string score = "Score: " + this.Player.Score;
+            string[] endGameMessage = {
+                "GAME OVER!\n\n",
+                string.Format("Your score is {0}.\n", this.Player.Score),
+                "Press any key to exit."
+            };
 
-            Console.SetCursorPosition(consoleWidth / 2 - score.Length, 0);
-            Console.WriteLine(score);
+            PrintCenteredMessages(endGameMessage);
+        }
+
+        private void PrintCenteredMessages(string[] messages)
+        {
+            for (int i = 0; i < messages.Length; i++)
+            {
+                Console.SetCursorPosition((Console.WindowWidth - messages[i].Length) / 2, Console.CursorTop);
+                Console.Write(messages[i]);
+            }
         }
     }
 }
