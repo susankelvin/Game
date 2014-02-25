@@ -233,12 +233,6 @@ namespace BestGame
                                 shotDestroyed = true;
                                 break;
                             }
-                            else if (this.PlayerShots[i] is DoubleLaser)
-                            {
-                                HandleShotHit(this.PlayerShots[i], this.GameObjects[j]);
-                                TryDestroy(this.GameObjects[j]);
-                                break; 
-                            }
                             else
                             {
                                 HandleShotHit(this.PlayerShots[i], this.GameObjects[j]);
@@ -260,17 +254,9 @@ namespace BestGame
                     {
                         if (bounds.Intersects(this.EnemyShots[j].BoundsRect))
                         {
-                            if (this.PlayerShots[i] is DoubleLaser)
-                            {
-                                this.EnemyShots.RemoveAt(j);
-                                break; 
-                            }
-                            else
-                            {
-                                this.EnemyShots.RemoveAt(j);
-                                shotsToRemove.Add(i);
-                                break;
-                            }
+                            this.EnemyShots.RemoveAt(j);
+                            shotsToRemove.Add(i);
+                            break;
                         }
                     }
                 }
