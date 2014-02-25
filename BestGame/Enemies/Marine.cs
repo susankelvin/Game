@@ -17,18 +17,6 @@ namespace BestGame
             this.offenceCounter = 0;
         }
 
-        public IWeapon Shoot()
-        {
-            if (this.offenceCounter++ % 15 == 0)
-            {
-                return new Bullet(new Vector(this.Position.X, this.Position.Y + 1), new Vector(0, 1));
-            }
-            else
-            {
-                return null;
-            }
-        }
-
         System.Collections.Generic.IList<IWeapon> IOffencible.Shoot()
         {
             List<IWeapon> bullets = new List<IWeapon>();

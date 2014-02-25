@@ -9,7 +9,7 @@ namespace BestGame
     {
         private const int NativeTimeOut = 50;
         private const int UpdateEnemiesPasses = 5;
-        private const int CreationPasses = 16;
+        private const int CreationPasses = 32;
         private readonly int consoleWidth;
         private readonly int consoleHeight;
 
