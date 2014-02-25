@@ -23,6 +23,7 @@ namespace BestGame
         private StatusBar StatusBar { get; set; }
         private bool PlayerKilled { get; set; }
 
+        
         public Engine(int consoleWidth, int consoleHeight)
         {
             this.consoleWidth = consoleWidth;
