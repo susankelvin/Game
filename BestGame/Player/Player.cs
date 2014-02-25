@@ -95,6 +95,10 @@ namespace BestGame
                     result.Add(new MultipleBullet(new Vector(this.Position.X, this.Position.Y - 1), new Vector(0, -1)));
                     result.Add(new MultipleBullet(new Vector(this.Position.X + 1, this.Position.Y - 1), new Vector(0, -1)));
                     return result;
+                case Weapons.DoubleLaser:
+                    result.Add(new DoubleLaser(new Vector(this.Position.X, this.Position.Y - 1), new Vector(0, -1)));
+                    result.Add(new DoubleLaser(new Vector(this.Position.X + 2, this.Position.Y - 1), new Vector(0, -1)));
+                    return result;
                 default:
                     return null;
             }

@@ -12,7 +12,7 @@ namespace BestGame
     /// <summary>
     /// Weapons available.
     /// </summary>
-    public enum Weapons { Knife, Bullet, Missile, MultipleBullet };
+    public enum Weapons { Knife, Bullet, Missile, MultipleBullet, DoubleLaser };
 
     /// <summary>
     /// Abstract foundation of weapon objects.

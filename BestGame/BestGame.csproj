@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basics\BoundsRect.cs" />
+    <Compile Include="Weapons\DoubleLaser.cs" />
     <Compile Include="Enemies\DestructableEnemy.cs" />
     <Compile Include="Enemies\Droid.cs" />
     <Compile Include="Enemies\Dron.cs" />
