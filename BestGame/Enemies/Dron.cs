@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
     class Dron : DestructableEnemy, IOffencible
     {

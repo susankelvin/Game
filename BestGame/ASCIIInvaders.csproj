@@ -7,7 +7,7 @@
     <ProjectGuid>{DEF45A78-A642-4474-AAEF-192189EB940A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BestGame</RootNamespace>
+    <RootNamespace>ASCIIInvaders</RootNamespace>
     <AssemblyName>BestGame</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -83,13 +83,13 @@
     <Compile Include="Interfaces\IMoveable.cs" />
     <Compile Include="Interfaces\IWeapon.cs" />
     <Compile Include="Basics\MoveableObject.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ASCIIInvaders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Basics\Vector.cs" />
     <Compile Include="Weapons\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="ASCIIInvadersClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

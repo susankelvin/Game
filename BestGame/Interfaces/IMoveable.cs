@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
     /// <summary>
     /// Required for every object that can change its position on console.

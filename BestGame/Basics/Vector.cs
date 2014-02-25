@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
     /// <summary>
     /// Coordinates of top-left point of drawable object or motion direction.

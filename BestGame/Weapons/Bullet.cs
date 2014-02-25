@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
     public class Bullet : Weapon
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
-    class Program
+    class ASCIIInvaders
     {
         static void Main()
         {

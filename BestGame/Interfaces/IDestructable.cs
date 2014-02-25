@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
     /// <summary>
     /// Required for enemy objects that could be destroyed.

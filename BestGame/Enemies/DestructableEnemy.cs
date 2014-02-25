@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
     /// <summary>
     /// Abstract foundation of destructable enemy objects.

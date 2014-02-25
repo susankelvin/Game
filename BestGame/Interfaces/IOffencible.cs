@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
     /// <summary>
     /// Required for objects that can attack.

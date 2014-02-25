@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
     public class Player : MoveableObject, IPlayer, IOffencible
     {

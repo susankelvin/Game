@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Text;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
     public class Engine
     {
@@ -12,6 +12,7 @@ namespace BestGame
         private const int CreationPasses = 32;
         private readonly int consoleWidth;
         private readonly int consoleHeight;
+        private const string GameTitle = "ASCII Invaders";
 
         private ulong Counter { get; set; }
         private Random Random { get; set; }
@@ -56,7 +57,7 @@ namespace BestGame
             Console.BufferHeight = consoleHeight;
             Console.WindowHeight = consoleHeight;
             Console.CursorVisible = false;
-            Console.Title = "Best game";
+            Console.Title = GameTitle;
             Console.OutputEncoding = Encoding.Unicode;
         }
 
@@ -491,7 +492,7 @@ namespace BestGame
         private void PrintWelcomeMessage()
         {
             string[] greetingMessage = {
-                "Welcome to Best game!\n\n",
+                string.Format("Welcome to {0}!\n\n", GameTitle),
                 "Use left, right, up and down arrow keys to navigate.\n",
                 "Select active weapon with numeric keys.\n\n",
                 "Press Esc to end the game.\n\n",

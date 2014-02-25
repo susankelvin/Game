@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BestGame
+namespace ASCIIInvaders
 {
     /// <summary>
     /// Delegate for IPlayer.WeaponChange event.
