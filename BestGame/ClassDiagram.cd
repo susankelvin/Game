@@ -80,9 +80,10 @@
   <Class Name="BestGame.StatusBar">
     <Position X="4.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAoAAAAQIAAAAAAAAgAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAAoBAAAAIAABAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>StatusBar\StatusBar.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="BestGame.Player">
     <Position X="9.5" Y="11.25" Width="1.5" />
@@ -299,6 +300,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IOffencible.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BestGame.IStatusBar">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAABAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IStatusBar.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

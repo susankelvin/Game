@@ -11,20 +11,10 @@ namespace BestGame
     /// The engine will subscribe the status bar object to Player's events and this way
     /// status bar will be able to display the most recent information about player's state.
     /// </remarks>
-    public class StatusBar : GameObject
+    public class StatusBar : GameObject, IStatusBar
     {
         private Weapons currentWeapon;
         private long currentScore;
-
-        /// <summary>
-        /// Delegate for player's WeaponChangeEvent.
-        /// </summary>
-        public WeaponChangeEvent WeaponChange { get; private set; }
-
-        /// <summary>
-        /// Delegate for player's ScoreUpdateEvent.
-        /// </summary>
-        public ScoreUpdateEvent ScoreUpdate { get; private set; }
 
         public override BoundsRect BoundsRect
         {
@@ -39,9 +29,22 @@ namespace BestGame
         {
             this.currentWeapon = (Weapons)0;
             this.currentScore = 0;
-            this.WeaponChange = activeWeapon => this.currentWeapon = activeWeapon;
-            this.ScoreUpdate = newScore => this.currentScore = newScore;
             this.Color = new Colors(ConsoleColor.White, ConsoleColor.DarkBlue);
+        }
+
+        /// <summary>
+        /// Hanlder for player's WeaponChangeEvent.
+        public void WeaponChangeEventHanlder(Weapons activeWeapon)
+        {
+            this.currentWeapon = activeWeapon;
+        }
+
+        /// <summary>
+        /// Hanlder for player's ScoreUpdateEvent.
+        /// </summary>
+        public void ScoreUpdateEventHanlder(long newScore)
+        {
+            this.currentScore = newScore;
         }
 
         /// <summary>

@@ -36,16 +36,8 @@ namespace BestGame
             this.BattleArena = new BoundsRect(0, 0, consoleWidth - 1, consoleHeight - this.StatusBar.BoundsRect.Height - 1);
             this.StatusBar.SetPostion(new Vector(0, this.BattleArena.Height));
             this.Player = new Player(new Vector(consoleWidth / 2, this.BattleArena.Height - 1));
-
-            if (this.StatusBar.ScoreUpdate != null)
-            {
-                this.Player.ScoreUpdate += this.StatusBar.ScoreUpdate;
-            }
-
-            if (this.StatusBar.WeaponChange != null)
-            {
-                this.Player.WeaponChange += this.StatusBar.WeaponChange;
-            }
+            this.Player.ScoreUpdate += this.StatusBar.ScoreUpdateEventHanlder;
+            this.Player.WeaponChange += this.StatusBar.WeaponChangeEventHanlder;
 
             foreach (var item in typeof(Weapons).GetEnumValues())
             {
@@ -233,14 +225,12 @@ namespace BestGame
                                 shotDestroyed = true;
                                 break;
                             }
-
                             else if (this.PlayerShots[i] is DoubleLaser)
                             {
                                 HandleShotHit(this.PlayerShots[i], this.GameObjects[j]);
                                 TryDestroy(this.GameObjects[j]);
                                 break;
                             }
-
                             else
                             {
                                 HandleShotHit(this.PlayerShots[i], this.GameObjects[j]);
@@ -262,18 +252,13 @@ namespace BestGame
                     {
                         if (bounds.Intersects(this.EnemyShots[j].BoundsRect))
                         {
-                            if (this.PlayerShots[i] is DoubleLaser)
+                            if (!(this.PlayerShots[i] is DoubleLaser))
                             {
-                                this.EnemyShots.RemoveAt(j);
-                                break; 
+                                shotsToRemove.Add(i);
                             }
 
-                            else
-                            {
-                                this.EnemyShots.RemoveAt(j);
-                                shotsToRemove.Add(i);
-                                break;
-                            }
+                            this.EnemyShots.RemoveAt(j);
+                            break;
                         }
                     }
                 }
@@ -521,7 +506,7 @@ namespace BestGame
         {
             string[] endGameMessage = {
                 "GAME OVER!\n\n",
-                string.Format("Your score is {0}.\n", this.Player.Score),
+                string.Format("Your score is {0}.\n\n", this.Player.Score),
                 "Press any key to exit."
             };
 
